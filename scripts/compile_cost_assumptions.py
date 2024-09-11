@@ -692,6 +692,11 @@ def get_data_DEA(tech, data_in, expectation=None):
     return df_final
 
 
+def gadd_atb_electricity_data(file_path, year_to_use, data):
+    atb_df = pd.read_parquet(file_path[year_to_use])
+    return pd.concat([data, atb_df])
+
+
 def add_desalinsation_data(costs):
     """
     add technology data for sea water desalination (SWRO) and water storage.

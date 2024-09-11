@@ -27,3 +27,6 @@ desalination:
     salinity: 35 # in PSU (Practical Salinity Unit) = kg/m^3
 
 ndigits: 4
+
+atb:
+    years: ["2019", "2020", "2021", "2022", "2023", "2024"]

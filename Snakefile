@@ -20,7 +20,10 @@ rule compile_cost_assumptions:
         dea_ship = "inputs/data_sheets_for_maritime_commercial_freight_and_passenger_transport.xlsx",
         dea_ccts = "inputs/technology_data_for_carbon_capture_transport_storage.xlsx",
         pnnl_energy_storage = "inputs/pnnl-energy-storage-database.xlsx",
-        manual_input = "inputs/manual_input.csv"
+        manual_input = "inputs/manual_input.csv",
+        atb_electricity = {
+            f"{year}": f"inputs/ATBe_{year}"+".parquet" for year in config["atb"]["years"]
+        },
     output:
         expand("outputs/costs_{year}.csv", year = config["years"])
     threads: 1
